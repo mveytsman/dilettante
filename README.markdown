@@ -4,6 +4,17 @@ It turns out that [maven central](http://search.maven.org/) only lets you use SS
 
 SSL encryption requires a separate authentication token. To see what I mean, try opening  [http://central.maven.org/maven2/org/springframework/](http://central.maven.org/maven2/org/springframework/) and [https://central.maven.org/maven2/org/springframework/](https://central.maven.org/maven2/org/springframework/) in your browser. This means that package managers like Clojure's lein, Scala's sbt, and maven itself when not specially configured will download JARs without any SSL. 
 
-dilettante is a script for [mitmproxy](http://mitmproxy.org/) that allows you to man in the middle JARs as they are downloaded form maven central. Currently, it will replace clojure.jar with a backdoored version that shows you a nice picture every time you run a clojure script
-![h4x0r3d](screenshot.png)
+## Usage
+
+
+1. Get in a position where you can man-in-the-middle HTTP traffic. Some hints:
+   - Buy a wifi router, call it "Starbucks Wifi"
+   - Install [ettercap](https://ettercap.github.io/ettercap/)
+   - Happen to be an ISP
+   - Something something 
+
+2. Run `dilettante.py`
+3. Proxy your target's http traffic through `localhost:8080`
+   - You can do an easy PoC of this by setting the `<proxy>` setting in `~/.m2/settings.xml`
+
 
