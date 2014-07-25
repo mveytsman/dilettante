@@ -1,8 +1,10 @@
 # Dilettante
 
-It turns out that [maven central](http://search.maven.org/) only lets you use SSL if you purchase an authentication token for a [donation](http://www.sonatype.com/clm/secure-access-to-central) of $10. They claim this $10 will go to the Apache project, but that's besides the point.
+It turns out that [Maven Central](http://search.maven.org/) only lets you use SSL if you purchase an authentication token for a [donation](http://www.sonatype.com/clm/secure-access-to-central) of $10. They claim this $10 will go to the Apache project, but that's besides the point.
 
 SSL encryption requires a separate authentication token. To see what I mean, try opening  [http://central.maven.org/maven2/org/springframework/](http://central.maven.org/maven2/org/springframework/) and [https://central.maven.org/maven2/org/springframework/](https://central.maven.org/maven2/org/springframework/) in your browser. This means that package managers like Clojure's lein, Scala's sbt, and maven itself when not specially configured will download JARs without any SSL. 
+
+Dilettante is a man in the middle proxy that injects malicious codes into JARs served by Maven Central.
 
 ## Usage
 
@@ -17,4 +19,7 @@ SSL encryption requires a separate authentication token. To see what I mean, try
 3. Proxy your target's http traffic through `localhost:8080`
    - You can do an easy PoC of this by setting the `<proxy>` setting in `~/.m2/settings.xml`
 
+## Results
+Your victims will get a friendly image when they execute any Java code that uses a JAR that passed through dilettante.
+![screenshot](screens/screen.png)
 
