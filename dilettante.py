@@ -61,6 +61,7 @@ class JarJar:
         hsh = hashlib.sha1(jar_contents).hexdigest()
         self.jars[path] = jar_path
         self.hashes[path + ".sha1"] = hsh 
+        logging.info("added " + path + " at " + jar_path + " with hash " + hsh )
         return jar_contents 
 
     def _backdoor_jar(self, jar_path):
