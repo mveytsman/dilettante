@@ -23,4 +23,4 @@ Dilettante is a man in the middle proxy that injects malicious codes into JARs s
 Your victims will get a friendly image when they execute any Java code that uses a JAR that passed through dilettante.
 ![screenshot](media/screen.png)
 
-You can see a video [here](media/screencast.mov)
+You can see a video [here](media/screencast.mp4)
