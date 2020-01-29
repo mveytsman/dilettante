@@ -1,4 +1,4 @@
-# Dilettante
+# Dilettante 
 
 More information on my blog [here](http://blog.ontoillogical.com/blog/2014/07/28/how-to-take-over-any-java-developer/)
 
